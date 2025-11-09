@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 #from django.conf.global_settings import LANGUAGES as DJANGO_LANGUAGES
 
@@ -29,6 +30,7 @@ SECRET_KEY = 'django-insecure-!@^xdttd1i&iefz49^@3gv#@4uvymt2^y+iq1p$1akj6kzu$cg
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CERF_TRUSTED_ORIGINS = ['https://*.onrender.com', 'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -77,13 +79,19 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://my_portfolio_db_i4cf_user:gFh0Zh8lBpAZbxkal6R2XZjcLevsvikX@dpg-d48c6t2li9vc7397n32g-a.oregon-postgres.render.com/my_portfolio_db_i4cf',
+        conn_max_age=600
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
