@@ -11,5 +11,6 @@ from . import views
 
 urlpatterns=[
     path('',views.contact),
+    path('', views.home, name='home'),
     # path('contact/',views.contact,name="savecontact")
 ]
