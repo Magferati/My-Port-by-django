@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 # render deployment URL
 CSRF_TRUSTED_ORIGINS = [
-    'https://my-portfolio-wza3.onrender.com',
+    'https://my-portfolio-wza3.onrender.com/home',
 ]
 
 # development URL (optional)
