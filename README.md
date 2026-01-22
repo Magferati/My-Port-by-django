@@ -31,7 +31,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/yourusername/django-portfolio.git
+git clone https://github.com/Magferati/My-Port-by-django.git
 
 
 Navigate to the project folder:
